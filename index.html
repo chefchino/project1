@@ -7,8 +7,27 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
   crossorigin=""/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
   <style>
+    .columns {
+      /* border: green solid 1px; */
+      border-radius: 6px;
+      padding: 10px;
+      display: flex;
+      margin: 10px;
+  }
+  .col-1{
+      margin: 10px;
+      justify-content: flex-start;
+  }
+  .field {
+      margin: auto;
+  }
+  .button {
+      color: white;
+  }
   #mapId{
       height: 600px;
 
@@ -20,6 +39,53 @@
   <body>
 
 <div id= "mapId"></div>
+<div class="columns">
+    <div class="container">
+        <div class="field has-addons">
+            <div class="control">
+                <a class="button is-info is-medium" style="background-color: green;">Search</a>
+            </div>
+            <div class="control has-icons-left">
+                <input type="text" class="input is-info is-medium" style="border-color: green" placeholder="Type something">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <section>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                <div class="content">
+                    <p><strong>MAP LOCATION</strong></p>
+                    <div id="mapId">
+                        <img src="https://www.bing.com/th?id=OIP.Z0gNW4wQWibMKFoBcIEAjQHaF7&w=235&h=182&c=7&o=5&dpr=2&pid=1.7">
+                    </div>
+                </div>
+                
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section>
+            <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                        <div class="content">
+                            <p><strong>MAP LOCATION</strong></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                            </p>
+                        </div>
+                        
+                        </div>
+                    </article>
+                </div>
+    </section>
+</div>
+     
 
 
 
