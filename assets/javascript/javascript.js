@@ -6,7 +6,6 @@ var zipcode = "27613";
 // zomato ajax
 
 zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
-// resturants[0].resturant.R.name
 
 $.ajax({
  url: zomatoURL,
@@ -14,7 +13,15 @@ $.ajax({
 })
 .done((response) => {
  console.log(response);
-	
+ console.log(response.restaurants[0].restaurant.name)
+
+ for (i = 0; i < response.restaurants.length; i++) {
+	console.log(response.restaurants[i].restaurant.name);
+	pTag = $("<p></p>");
+	pTag.text(response.restaurants[i].restaurant.name);
+	$(".restaurant-name-tag").append(pTag);
+ };
+
 });
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
