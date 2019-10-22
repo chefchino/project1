@@ -9,90 +9,29 @@
         crossorigin="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css"href="assets/css/style.css">
 
-    <style>
-        body {
-            background-color: white;
-        }
-
-        .head-div {
-            border-bottom: black solid 2px;
-            margin-bottom: 10px;
-            text-align: center;
-            padding-bottom: 10px;
-            padding-top: 10px;
-            border-radius: 0 0 4px 4px;
-        }
-
-        header {
-            background-color: white;
-            text-align: center;
-            padding: 15px;
-            padding-bottom: 20px;
-        }
-
-        header a {
-            float: right;
-        }
-
-        .card-header-title p {
-            text-align: center;
-
-        }
-
-        .columns {
-            border-radius: 6px;
-            padding: 10px;
-            display: flex;
-            margin-left: 25px;
-        }
-
-        .col-1 {
-            margin: 10px;
-            justify-content: flex-start;
-        }
-
-        .field {
-            margin: auto;
-        }
-
-        #mapId {
-            height: 370px;
-            width: 600px;
-        }
-
-        .container {
-            flex-wrap: wrap;
-        }
-
-        .tile-left {
-            margin-left: 50px;
-            width: 62.5%;
-            height: 500px;
-        }
-
-        .tile-right {
-            margin-right: 50px;
-            width: 37.5%;
-            height: 500px;
-
-        }
-
-        .box {
-            margin-right: 50px;
-            margin-left: 50px;
-        }
-    </style>
 </head>
 
 <body>
     <div class="head-div">
         <header>
-            <p><strong>Danm I'm Hungry</strong></p>
-            <a href="#">Contacts</a>
+            <div class="flex-container">
+                <p><strong>Danm I'm Hungry</strong></p>
+                <div class="field has-addons">
+                    <div class="control">
+                        <a class="button is-info is-normal">Search</a>
+                    </div>
+                    <div class="control has-icons-left">
+                        <input type="text" class="input is-info is-normal" placeholder="Type something">
+                    </div>
+                </div>
+                <a href="#">Contacts</a>
+            </div>
+
         </header>
     </div>
-    <div class="columns">
+    <!-- <div class="columns">
         <div class="container">
             <div class="field has-addons">
                 <div class="control">
@@ -104,7 +43,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="tile is-ancestor">
         <div class="tile is-parent is-7.5 tile-left">
