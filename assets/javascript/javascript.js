@@ -1,5 +1,22 @@
 var mymap = L.map('mapId').setView([35.900019, -79.012629], 13);
 
+var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
+
+var zipcode = "27613";
+// zomato ajax
+
+zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
+// resturants[0].resturant.R.name
+
+$.ajax({
+ url: zomatoURL,
+ method: 'GET',
+})
+.done((response) => {
+ console.log(response);
+	
+});
+
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
@@ -25,3 +42,6 @@ function onMapClick(e) {
 }
 
 mymap.on('click', onMapClick);
+
+
+
