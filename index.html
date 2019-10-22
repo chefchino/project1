@@ -9,11 +9,11 @@
         crossorigin="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" type="text/css"href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 
-<body>
+<!-- <body>
     <div class="head-div">
         <header>
             <div class="flex-container">
@@ -29,7 +29,7 @@
                 <a href="#">Contacts</a>
             </div>
 
-        </header>
+        </header> -->
     </div>
     <!-- <div class="columns">
         <div class="container">
@@ -45,45 +45,48 @@
         </div>
     </div> -->
 
-    <div class="tile is-ancestor">
-        <div class="tile is-parent is-7.5 tile-left">
-            <article class="tile is-child box">
-                <p class="title">Side column</p>
-                <div class="content">
-                    <div id="mapId"></div>
-                </div>
+    <div class="main-container">
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-7.5 tile-left">
+                <article class="tile is-child box">
+                    <p class="title">Side column</p>
+                    <div class="content">
+                        <div id="mapId"></div>
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-parent is-4.5 tile-right">
+                <article class="tile is-child box">
+                    <p class="title">Main column</p>
+                    <p class="subtitle">With some content</p>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                            pellentesque
+                            tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p><strong>MAP LOCATION</strong></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
+                            fringilla egestas. Nullam condimentum luctus turpis.
+                        </p>
             </article>
         </div>
-        <div class="tile is-parent is-4.5 tile-right">
-            <article class="tile is-child box">
-                <p class="title">Main column</p>
-                <p class="subtitle">With some content</p>
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque
-                        tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                </div>
-            </article>
+    </div>
+
+        <div class="card header-div">
+            <header class="card-footer">
+                <p class="card-header-title is-2">
+                    Component
+                </p>
+            </header>
         </div>
-    </div>
-    <div class="box">
-        <article class="media">
-            <div class="media-content">
-                <div class="content">
-                    <p><strong>MAP LOCATION</strong></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
-                        fringilla egestas. Nullam condimentum luctus turpis.
-                    </p>
-        </article>
-    </div>
-    <div class="card header-div">
-        <header class="card-footer">
-            <p class="card-header-title is-2">
-                Component
-            </p>
-        </header>
-    </div>
-
-
 
 
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
