@@ -25,3 +25,15 @@ function onMapClick(e) {
 }
 
 mymap.on('click', onMapClick);
+
+var ticketSettings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=A59EI1KccM0qNv0MMByVD7gaBYJKTPsZ?q=",
+	"method": "GET",
+	}
+}
+console.log("hello");
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
