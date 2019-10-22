@@ -1,18 +1,18 @@
 body {
     background-color: white;
-    margin: 20px;
 }
 .main-container {
     position: flex;
+    margin: 20px;
+
 }
 
 .head-div {
-    border-bottom: black solid 2px;
+    border-bottom: grey solid 2px;
     margin-bottom: 10px;
     text-align: center;
     padding-bottom: 10px;
     padding-top: 10px;
-    border-radius: 0 0 4px 4px;
 }
 
 header {
@@ -32,12 +32,6 @@ header a {
 
 }
 
-.columns {
-    border-radius: 6px;
-    padding: 10px;
-    display: flex;
-    margin-left: 25px;
-}
 
 .col-1 {
     margin: 10px;
@@ -45,16 +39,12 @@ header a {
 }
 
 .field {
-    margin: auto;
+    margin-bottom: 20px;
 }
 
 #mapId {
     height: 370px;
     width: 600px;
-}
-
-.container {
-    flex-wrap: wrap;
 }
 
 
@@ -84,18 +74,3 @@ header a {
     }
 }
 
-
-/* @media only screen and (max-width: 900px) {
-
-    .tile-left {
-        margin-left: 50px;
-        width: 90%;
-        height: 500px;
-    }
-
-    .tile-right {
-        margin-right: 50px;
-        width: 100%;
-        height: 500px;
-    }
-} */

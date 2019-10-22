@@ -13,23 +13,23 @@
 
 </head>
 
-<!-- <body>
+<body>
     <div class="head-div">
         <header>
             <div class="flex-container">
                 <p><strong>Danm I'm Hungry</strong></p>
-                <div class="field has-addons">
+                <!-- <div class="field has-addons">
                     <div class="control">
                         <a class="button is-info is-normal">Search</a>
                     </div>
                     <div class="control has-icons-left">
                         <input type="text" class="input is-info is-normal" placeholder="Type something">
                     </div>
-                </div>
+                </div> -->
                 <a href="#">Contacts</a>
             </div>
 
-        </header> -->
+        </header>
     </div>
     <!-- <div class="columns">
         <div class="container">
@@ -46,11 +46,20 @@
     </div> -->
 
     <div class="main-container">
+        <div class="field has-addons">
+            <div class="control">
+                <a class="button is-info is-normal">Search</a>
+            </div>
+            <div class="control has-icons-left">
+                <input type="text" class="input is-info is-normal" placeholder= "Type something">
+            </div>
+        </div>
+
 
         <div class="tile is-ancestor">
             <div class="tile is-parent is-7.5 tile-left">
                 <article class="tile is-child box">
-                    <p class="title">Side column</p>
+                    <p class="title location-div"> .location-div</p>
                     <div class="content">
                         <div id="mapId"></div>
                     </div>
@@ -58,12 +67,10 @@
             </div>
             <div class="tile is-parent is-4.5 tile-right">
                 <article class="tile is-child box">
-                    <p class="title">Main column</p>
+                    <p class="title info-title">.info-div</p>
                     <p class="subtitle">With some content</p>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
-                            pellentesque
-                            tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                    <div class="content info-div">
+                        <p>.info-div -------- .info-div</p>
                     </div>
                 </article>
             </div>
@@ -80,13 +87,13 @@
         </div>
     </div>
 
-        <div class="card header-div">
-            <header class="card-footer">
-                <p class="card-header-title is-2">
-                    Component
-                </p>
-            </header>
-        </div>
+    <div class="card header-div">
+        <header class="card-footer">
+            <p class="card-header-title is-2">
+                Footer
+            </p>
+        </header>
+    </div>
 
 
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
