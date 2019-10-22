@@ -2,46 +2,83 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>TESTER</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
+    <meta charset="utf-8">
+    <title>TESTER</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-  <style>
-  #mapId{
-      height: 600px;
+</head>
 
-    width: 1000px;
-  }
-  </style>
-  </head>
+<body>
+    <header>
+        <div class="flex-container">
+            <p>Danm I'm Hungry</p>
+        </div>
+    </header>
+   
 
-  <body>
-
-<div id= "mapId"></div>
-
-
-
-
-
-
-
-
-
-
-
+    <div class="main-container">
+        <div class="field has-addons">
+            <div class="control">
+                <a class="button is-info is-normal" style="background-color: #112d32;
+                ">Search</a>
+            </div>
+            <div class="control has-icons-left">
+                <input type="text" class="input is-info is-normal" placeholder="Type something"
+                    style="border-color: #112d32;">
+            </div>
+        </div>
 
 
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-7.5 tile-left">
+                <article class="tile is-child box">
+                    <p class="title location-div"> .location-div</p>
+                    <div class="content">
+                        <div id="mapId"></div>
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-parent is-4.5 tile-right">
+                <article class="tile is-child box">
+                    <p class="title info-title">Restaurants</p>
+                    <div class="subtitle restaurant-name-tag"></div>
+                    <!-- <div class="content info-div">
+                        <p>.info-div -------- .info-div</p>
+                    </div> -->
+                </article>
+            </div>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p><strong>MAP LOCATION</strong></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
+                            fringilla egestas. Nullam condimentum luctus turpis.
+                        </p>
+            </article>
+        </div>
+    </div>
 
+    <footer>
+        <div class="foot">
+            <p>Footer</p>
+            <a href="#">Contacts</a>
+        </div>
 
+    </footer>
 
 
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-  crossorigin=""></script>
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="assets/javascript/javascript.js"></script>
-  </body>
+</body>
 
-  </html>
+</html>

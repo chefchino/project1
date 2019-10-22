@@ -16,7 +16,15 @@ $.ajax({
 })
 .done((response) => {
  console.log(response);
-	
+ console.log(response.restaurants[0].restaurant.name)
+
+ for (i = 0; i < response.restaurants.length; i++) {
+	console.log(response.restaurants[i].restaurant.name);
+	pTag = $("<p></p>");
+	pTag.text(response.restaurants[i].restaurant.name);
+	$(".restaurant-name-tag").append(pTag);
+ };
+
 });
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
