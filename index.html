@@ -2,109 +2,156 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>TESTER</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta charset="utf-8">
+    <title>TESTER</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
-  <style>
-    .columns {
-      /* border: green solid 1px; */
-      border-radius: 6px;
-      padding: 10px;
-      display: flex;
-      margin: 10px;
-  }
-  .col-1{
-      margin: 10px;
-      justify-content: flex-start;
-  }
-  .field {
-      margin: auto;
-  }
-  .button {
-      color: white;
-  }
-  #mapId{
-      height: 400px;
+    <style>
+        body {
+            background-color: white;
+        }
 
-    width: 400px;
-  }
-  </style>
-  </head>
+        .head-div {
+            border-bottom: black solid 2px;
+            margin-bottom: 10px;
+            text-align: center;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-radius: 0 0 4px 4px;
+        }
 
-  <body>
+        header {
+            background-color: white;
+            text-align: center;
+            padding: 15px;
+            padding-bottom: 20px;
+        }
 
-<div class="columns">
-    <div class="container">
-        <div class="field has-addons">
-            <div class="control">
-                <a class="button is-info is-medium" style="background-color: green;">Search</a>
-            </div>
-            <div class="control has-icons-left">
-                <input type="text" class="input is-info is-medium" style="border-color: green" placeholder="Type something">
+        header a {
+            float: right;
+        }
+
+        .card-header-title p {
+            text-align: center;
+
+        }
+
+        .columns {
+            border-radius: 6px;
+            padding: 10px;
+            display: flex;
+            margin-left: 25px;
+        }
+
+        .col-1 {
+            margin: 10px;
+            justify-content: flex-start;
+        }
+
+        .field {
+            margin: auto;
+        }
+
+        #mapId {
+            height: 370px;
+            width: 600px;
+        }
+
+        .container {
+            flex-wrap: wrap;
+        }
+
+        .tile-left {
+            margin-left: 50px;
+            width: 62.5%;
+            height: 500px;
+        }
+
+        .tile-right {
+            margin-right: 50px;
+            width: 37.5%;
+            height: 500px;
+
+        }
+
+        .box {
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head-div">
+        <header>
+            <p><strong>Danm I'm Hungry</strong></p>
+            <a href="#">Contacts</a>
+        </header>
+    </div>
+    <div class="columns">
+        <div class="container">
+            <div class="field has-addons">
+                <div class="control">
+                    <a class="button is-info is-normal" style="background-color: red; color: black;">Search</a>
+                </div>
+                <div class="control has-icons-left">
+                    <input type="text" class="input is-info is-normal" style="border-color: green"
+                        placeholder="Type something">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<div class="container">
-    <section>
-        <div class="box">
-            <article class="media">
-                <div class="media-content">
+    <div class="tile is-ancestor">
+        <div class="tile is-parent is-7.5 tile-left">
+            <article class="tile is-child box">
+                <p class="title">Side column</p>
                 <div class="content">
-                    <p><strong>MAP LOCATION</strong></p>
                     <div id="mapId"></div>
-                </div>
-                
                 </div>
             </article>
         </div>
-    </section>
-
-    <section>
-            <div class="box">
-                    <article class="media">
-                        <div class="media-content">
-                        <div class="content">
-                            <p><strong>MAP LOCATION</strong></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                            </p>
-                        </div>
-                        
-                        </div>
-                    </article>
+        <div class="tile is-parent is-4.5 tile-right">
+            <article class="tile is-child box">
+                <p class="title">Main column</p>
+                <p class="subtitle">With some content</p>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque
+                        tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
                 </div>
-    </section>
-</div>
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </article>
+        </div>
+    </div>
+    <div class="box">
+        <article class="media">
+            <div class="media-content">
+                <div class="content">
+                    <p><strong>MAP LOCATION</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
+                        fringilla egestas. Nullam condimentum luctus turpis.
+                    </p>
+        </article>
+    </div>
+    <div class="card header-div">
+        <header class="card-footer">
+            <p class="card-header-title is-2">
+                Component
+            </p>
+        </header>
+    </div>
 
 
 
 
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-  crossorigin=""></script>
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="assets/javascript/javascript.js"></script>
-  </body>
+</body>
 
-  </html>
+</html>
