@@ -25,6 +25,7 @@ $("#search").on("click", function (event) {
 			for (i = 0; i < response.restaurants.length; i++) {
 				console.log(response.restaurants[i].restaurant.name);
 				pTag = $("<p></p>");
+				pTag.addClass("restName");
 				// pTag.addClass("restInfo");
 				pTag.text(response.restaurants[i].restaurant.name);
 				pTag1 = $("<p>");
@@ -34,11 +35,13 @@ $("#search").on("click", function (event) {
 				pTag2.text("website");
 				pTag3 = $("<p>");
 				pTag3.text("Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating);
-
+				pTag4 = $("<p>");
+				pTag4.text("Avg for two: $" + response.restaurants[i].restaurant.average_cost_for_two);
 				$(".restaurant-name-tag").append(pTag);
 				$(".restaurant-name-tag").append(pTag1);
-				$(".restaurant-name-tag").append(pTag2);
 				$(".restaurant-name-tag").append(pTag3);
+				$(".restaurant-name-tag").append(pTag4);
+				$(".restaurant-name-tag").append(pTag2);
 			};
 
 		});
