@@ -23,6 +23,7 @@ header p {
     color: #112d32;
 }
 #restInfo {
+    block-size: 500px;
     overflow: auto;
 }
 .field {
@@ -38,6 +39,7 @@ footer{
     text-align: center;
 
 }
+
 p{
     font-weight: bolder;
 }
