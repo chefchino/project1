@@ -22,6 +22,9 @@ header p {
 .box {
     color: #112d32;
 }
+#restInfo {
+    overflow: auto;
+}
 .field {
     margin-bottom: 20px;
 }
@@ -34,6 +37,9 @@ footer{
 .foot {
     text-align: center;
 
+}
+p{
+    font-weight: bolder;
 }
 
 #mapId {
