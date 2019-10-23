@@ -2,10 +2,15 @@ var mymap = L.map('mapId').setView([35.900019, -79.012629], 13);
 
 var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 
-var zipcode = "27613";
+
+$("#search").on("click", function(event){
+	event.preventDefault();
+console.log("inside");
+var zipcode= $("#zipcode").val();
 // zomato ajax
 
 zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
+// resturants[0].resturant.R.name
 
 $.ajax({
  url: zomatoURL,
@@ -51,4 +56,6 @@ function onMapClick(e) {
 mymap.on('click', onMapClick);
 
 
+	
+})
 
