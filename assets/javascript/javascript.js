@@ -11,15 +11,16 @@ var zipcode= $("#zipcode").val();
 
 zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 // resturants[0].resturant.R.name
+seatGeekURL = "https://api.seatgeek.com/2/events?client_id=MTkwMzg0NDh8MTU3MTc4NTIxNS4zOQ&postal_code=" + zipcode;
+
 
 $.ajax({
  url: zomatoURL,
  method: 'GET',
 })
 .done((response) => {
- console.log(response)
- console.log(response.restaurants[0].restaurant.name)
- console.log(response.restaurants[0].restaurant.url)
+ console.log(response);
+//  console.log(response.restaurants[0].restaurant.name)
 
  for (i = 0; i < response.restaurants.length; i++) {
 	// console.log(response.restaurants[i].restaurant.name);
@@ -33,6 +34,20 @@ $.ajax({
  }
 });
 
+$.ajax({
+	url: seatGeekURL,
+	method: 'GET',
+})
+.done((response1) => {
+	console.log(response1);
+
+	for (i = 0; i < response1.events.length; i++){
+		console.log(response1.events[i].title);
+		pTwo = $("<p>");
+		pTwo.text(response1.events[i].title);
+		$("#events").append(pTwo);
+	};
+});
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
