@@ -1,7 +1,9 @@
-var mymap = L.map('mapId').setView([35.900019, -79.012629], 13);
+var mymap = L.map('mapId')
+mymap.setView([35.900019, -79.012629], 13);
 
 var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
-
+// var long;
+// var lat;
 
 $("#search").on("click", function (event) {
 	event.preventDefault();
@@ -21,9 +23,13 @@ $("#search").on("click", function (event) {
 		.done((response) => {
 			console.log(response);
 			//  console.log(response.restaurants[0].restaurant.name)
+			mymap.setView([response.restaurants[0].restaurant.location.latitude,
+				response.restaurants[0].restaurant.location.longitude], 13);
 
 			for (i = 0; i < response.restaurants.length; i++) {
 				console.log(response.restaurants[i].restaurant.name);
+				long= response.restaurants[i].restaurant.location.longitude;
+				lat= response.restaurants[i].restaurant.location.latitude;
 				pTag = $("<p></p>");
 				pTag.addClass("restName");
 				// pTag.addClass("restInfo");
@@ -31,7 +37,7 @@ $("#search").on("click", function (event) {
 				pTag1 = $("<p>");
 				pTag1.text(response.restaurants[i].restaurant.location.address);
 				pTag2 = $("<a>");
-				pTag2.attr(response.restaurants[i].restaurant.url);
+				pTag2.attr("href", response.restaurants[i].restaurant.url);
 				pTag2.text("website");
 				pTag3 = $("<p>");
 				pTag3.text("Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating);
@@ -42,6 +48,14 @@ $("#search").on("click", function (event) {
 				$(".restaurant-name-tag").append(pTag3);
 				$(".restaurant-name-tag").append(pTag4);
 				$(".restaurant-name-tag").append(pTag2);
+				var marker= L.marker([lat, long], {
+					color: 'red',
+					fillColor: '#f03',
+					fillOpacity: 0.5,
+					// radius: 000
+				})
+				marker.addTo(mymap);
+				// mymap.setView([lat, long], 13);
 			};
 
 		});
@@ -70,7 +84,7 @@ $("#search").on("click", function (event) {
 
 
 
-	var circle = L.circle([35.900019, -79.012629], {
+	var circle = L.circle([lat, long], {
 		color: 'red',
 		fillColor: '#f03',
 		fillOpacity: 0.5,
