@@ -71,6 +71,8 @@ $("#search").on("click", function (event) {
 				console.log(response1.events[i].title);
 				pTwo = $("<p>");
 				pTwo.text(response1.events[i].title);
+				pTwo1 = $("<p>");
+				pTwo1
 				$("#events").append(pTwo);
 			};
 		});
