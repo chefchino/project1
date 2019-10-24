@@ -38,6 +38,9 @@ header img {
     font-family: 'Sigmar One', cursive;
 
 }
+h1{
+    font-size:48px;
+}
 
 
 .main-container {
@@ -54,6 +57,13 @@ header img {
 .is-child-box {
     border-radius: 4px;
 }
+#restInfo {
+    block-size: 500px;
+    overflow: auto;
+}
+.restName{
+font-size:18px;
+}
 .field {
     margin-bottom: 20px;
 }
@@ -66,6 +76,16 @@ footer{
 .foot {
     text-align: center;
 
+}
+
+p{
+    font-weight: bolder;
+    font-size:12px;
+}
+a{
+    font-weight: bolder;
+    font-size:10px;
+    margin-bottom:10px;
 }
 
 #mapId {
