@@ -23,15 +23,12 @@ $.ajax({
 //  console.log(response.restaurants[0].restaurant.name)
 
  for (i = 0; i < response.restaurants.length; i++) {
-	// console.log(response.restaurants[i].restaurant.name);
-	// console.log(response.restaurants[i].restaurant.url);
+	console.log(response.restaurants[i].restaurant.name);
+	pTag = $("<p></p>");
+	pTag.text(response.restaurants[i].restaurant.name);
+	$(".restaurant-name-tag").append(pTag);
+ };
 
-	// var hrefZomato = $("$.restaurant-name-tag");
-
-	pTag = $("<p></p>")
-	pTag.text(response.restaurants[i].restaurant.name)
-	$(".restaurant-name-tag").append(pTag)
- }
 });
 
 $.ajax({
