@@ -36,7 +36,6 @@ header img {
 }
 .event-header{
     font-family: 'Sigmar One', cursive;
-
 }
 h1{
     font-size:48px;
@@ -57,11 +56,11 @@ h1{
 .is-child-box {
     border-radius: 4px;
 }
-#restInfo {
+#restInfo, #events {
     block-size: 500px;
     overflow: auto;
 }
-.restName{
+.restName, .eventName{
 font-size:18px;
 }
 .field {
