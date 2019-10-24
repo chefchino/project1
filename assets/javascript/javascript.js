@@ -38,7 +38,7 @@ $("#search").on("click", function (event) {
 				pTag1.text(response.restaurants[i].restaurant.location.address);
 				pTag2 = $("<a>");
 				pTag2.attr("href", response.restaurants[i].restaurant.url);
-				pTag2.text("website");
+				pTag2.text("restaurant");
 				pTag3 = $("<p>");
 				pTag3.text("Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating);
 				pTag4 = $("<p>");
@@ -70,10 +70,22 @@ $("#search").on("click", function (event) {
 			for (i = 0; i < response1.events.length; i++) {
 				console.log(response1.events[i].title);
 				pTwo = $("<p>");
+				pTwo.addClass("eventName");
 				pTwo.text(response1.events[i].title);
 				pTwo1 = $("<p>");
-				pTwo1
+				pTwo1.text(response1.events[i].type)
+				pTwo2 = $("<p>");
+				pTwo2.text(response1.events[i].venue.address);
+				pTwo3= $("<p>");
+				pTwo3.text(response1.events[i].venue.city);
+				pTwo4 = $("<a>");
+				pTwo4.attr("href", response1.events[i].url);
+				pTwo4.text("event")
 				$("#events").append(pTwo);
+				$("#events").append(pTwo1);
+				$("#events").append(pTwo2);
+				$("#events").append(pTwo3);
+				$("#events").append(pTwo4);
 			};
 		});
 
@@ -86,12 +98,12 @@ $("#search").on("click", function (event) {
 
 
 
-	var circle = L.circle([lat, long], {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5,
-		radius: 1000
-	}).addTo(mymap);
+	// var circle = L.circle([lat, long], {
+	// 	color: 'red',
+	// 	fillColor: '#f03',
+	// 	fillOpacity: 0.5,
+	// 	radius: 1000
+	// .addTo(giut mymap);
 
 	function onMapClick(e) {
 		circle
