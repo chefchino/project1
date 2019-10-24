@@ -44,8 +44,11 @@ $.ajax({
 	for (i = 0; i < response1.events.length; i++){
 		console.log(response1.events[i].title);
 		pTwo = $("<p>");
+		pthree = $("<p>");
 		pTwo.text(response1.events[i].title);
+		pthree.text(response1.events[i].venue.address);
 		$("#events").append(pTwo);
+		$("#events").append(pthree);
 	};
 });
 
