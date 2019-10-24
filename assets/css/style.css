@@ -23,15 +23,36 @@ header img {
     height: 50px;
     width: 50px;
     float: left;
+    margin-left: 5px;
+}
+.box-title {
+    font-size: 24px;
+    color: rgb(194, 0, 0);
+
+}
+.res-header {
+    font-family: 'Fugaz One', cursive;
+
+}
+.event-header{
+    font-family: 'Sigmar One', cursive;
+
 }
 
 
 .main-container {
     position: flex;
-    margin: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+
 }
 .box {
     color: #112d32;
+    border-radius: 4px;
+
+}
+.is-child-box {
+    border-radius: 4px;
 }
 .field {
     margin-bottom: 20px;
@@ -48,8 +69,8 @@ footer{
 }
 
 #mapId {
-    height: 370px;
-    width: 700px;
+    height: 500px;
+    width: 900px;
 }
 
 @media only screen and (max-width: 1025px) {
