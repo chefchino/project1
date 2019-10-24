@@ -73,14 +73,14 @@ $("#search").on("click", function (event) {
 				pTwo.addClass("eventName");
 				pTwo.text(response1.events[i].title);
 				pTwo1 = $("<p>");
-				pTwo1.text(response1.events[i].type)
+				pTwo1.text("Event Type: "+ response1.events[i].type)
 				pTwo2 = $("<p>");
 				pTwo2.text(response1.events[i].venue.address);
 				pTwo3= $("<p>");
 				pTwo3.text(response1.events[i].venue.city);
 				pTwo4 = $("<a>");
 				pTwo4.attr("href", response1.events[i].url);
-				pTwo4.text("event")
+				pTwo4.text("Event")
 				$("#events").append(pTwo);
 				$("#events").append(pTwo1);
 				$("#events").append(pTwo2);
