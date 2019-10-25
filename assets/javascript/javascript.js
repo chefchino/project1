@@ -4,7 +4,12 @@ mymap.setView([35.900019, -79.012629], 13);
 var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 // var long;
 // var lat;
+$("#zipcode").keyup(function(event){
 
+	if (event.keyCode ===13){
+		$("#search").click();
+	}
+});
 $("#search").on("click", function (event) {
 	event.preventDefault();
 	console.log("inside");
@@ -103,7 +108,7 @@ $("#search").on("click", function (event) {
 	// 	fillColor: '#f03',
 	// 	fillOpacity: 0.5,
 	// 	radius: 1000
-	// .addTo(giut mymap);
+	// .addTo(mymap);
 
 	function onMapClick(e) {
 		circle
