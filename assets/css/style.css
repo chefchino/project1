@@ -30,24 +30,33 @@ header img {
     color: rgb(194, 0, 0);
 
 }
-.res-header {
-    font-family: 'Fugaz One', cursive;
-
-}
-.event-header{
-    font-family: 'Sigmar One', cursive;
-}
 h1{
     font-size:48px;
 }
-
-
 .main-container {
     position: flex;
     margin-right: 30px;
     margin-left: 30px;
 
 }
+.field {
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+#mapId {
+    height: 400px;
+    width: auto;
+}
+@media only screen and (max-width: 500px) {
+    header p {
+      font-size: 25px;
+    }
+    header img {
+        height: 50px;
+        width: 50px;
+
+    }
+  }
 .box {
     color: #112d32;
     border-radius: 4px;
@@ -59,20 +68,23 @@ h1{
 .my-div-icon{
     background-color: red;
 }
+.res-header {
+    font-family: 'Fugaz One', cursive;
+
+}
+.event-header{
+    font-family: 'Sigmar One', cursive;
+}
 .is-child-box {
     border-radius: 4px;
 }
+
 #restInfo, #events {
     block-size: 500px;
     overflow: auto;
 }
 .restName, .eventName{
 font-size:18px;
-}
-
-.field {
-    margin-bottom: 20px;
-    margin-left: 50px;
 }
 .box-left {
     float: left;
@@ -81,6 +93,19 @@ font-size:18px;
 .box-right {
     float: right;
     height: 600px;
+}
+p{
+   margin-bottom: 5px;
+}
+a{
+    font-weight: bolder;
+    font-size:10px;
+}
+.restName {
+    color: black;
+    border-top: black solid 1px;
+    padding-top: 5px;
+    margin-top: 10px;
 }
 footer{
     clear: both;
@@ -93,31 +118,4 @@ footer{
     text-align: center;
 }
 
-p{
-   margin-bottom: 5px;
-}
-a{
-    font-weight: bolder;
-    font-size:10px;
-}
-#mapId {
-    height: 400px;
-    width: auto;
-}
-.restName {
-    color: black;
-    border-top: black solid 1px;
-    padding-top: 5px;
-    margin-top: 10px;
-}
-@media only screen and (max-width: 500px) {
-    header p {
-      font-size: 25px;
-    }
-    header img {
-        height: 50px;
-        width: 50px;
-
-    }
-  }
 
