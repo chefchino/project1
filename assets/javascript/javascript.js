@@ -15,6 +15,7 @@ $("#search").on("click", function (event) {
 	console.log("inside");
 	var zipcode = $("#zipcode").val();
 	// zomato ajax
+	$("#zipcode").val("");
 
 	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 	// resturants[0].resturant.R.name
@@ -43,7 +44,7 @@ $("#search").on("click", function (event) {
 				pTag1.text("Address: " + response.restaurants[i].restaurant.location.address);
 				pTag2 = $("<a>");
 				pTag2.attr("href", response.restaurants[i].restaurant.url);
-				pTag2.text("restaurant");
+				pTag2.text("Check It Out");
 				pTag3 = $("<p>");
 				pTag3.text("Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating);
 				pTag4 = $("<p>");
@@ -87,7 +88,7 @@ $("#search").on("click", function (event) {
 				pTwo3.text("City: " + response1.events[i].venue.city);
 				pTwo4 = $("<a>");
 				pTwo4.attr("href", response1.events[i].url);
-				pTwo4.text("Event")
+				pTwo4.text("Get Tickets")
 				$("#events").append(pTwo);
 				$("#events").append(pTwo1);
 				$("#events").append(pTwo2);
