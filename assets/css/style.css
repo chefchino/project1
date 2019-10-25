@@ -48,6 +48,9 @@ h1{
     margin-left: 30px;
 
 }
+.my-div-icon{
+    background-color: red;
+}
 .box {
     color: #112d32;
     border-radius: 4px;
