@@ -79,7 +79,7 @@ h1{
     border-radius: 4px;
 }
 
-#restInfo, #events {
+.restaurant-name-tag, #events {
     block-size: 500px;
     overflow: auto;
 }
