@@ -93,13 +93,15 @@ $("#search").on("click", function (event) {
 				$("#events").append(pTwo2);
 				$("#events").append(pTwo3);
 				$("#events").append(pTwo4);
-				var marker1= L.marker([lat1, long1], {
-					color: 'red',
-					fillColor: '#f03',
-					fillOpacity: 0.5,
-					// radius: 000
-				})
-				marker1.addTo(mymap);
+				var myIcon = L.divIcon({className: 'my-div-icon'});
+				L.marker([lat1, long1], {icon: myIcon}).addTo(mymap);
+				// var marker1= L.marker([lat1, long1], {
+				// 	color: 'red',
+				// 	fillColor: '#f03',
+				// 	fillOpacity: 0.5,
+				// 	// radius: 000
+				// })
+				// marker1.addTo(mymap);
 			};
 		});
 
