@@ -37,10 +37,9 @@ $("#search").on("click", function (event) {
 				lat= response.restaurants[i].restaurant.location.latitude;
 				pTag = $("<p></p>");
 				pTag.addClass("restName");
-				// pTag.addClass("restInfo");
 				pTag.text(response.restaurants[i].restaurant.name);
 				pTag1 = $("<p>");
-				pTag1.text("Address: " + response.restaurants[i].restaurant.location.address);
+				pTag1.text(response.restaurants[i].restaurant.location.address);
 				pTag2 = $("<a>");
 				pTag2.attr("href", response.restaurants[i].restaurant.url);
 				pTag2.text("restaurant");
@@ -73,8 +72,6 @@ $("#search").on("click", function (event) {
 			console.log(response1);
 
 			for (i = 0; i < response1.events.length; i++) {
-				lat1= response1.events[i].venue.location.lat;
-				long1= response1.events[i].venue.location.lon;
 				console.log(response1.events[i].title);
 				pTwo = $("<p>");
 				pTwo.addClass("eventName");
@@ -82,9 +79,9 @@ $("#search").on("click", function (event) {
 				pTwo1 = $("<p>");
 				pTwo1.text("Event Type: "+ response1.events[i].type)
 				pTwo2 = $("<p>");
-				pTwo2.text("Address: " + response1.events[i].venue.address);
+				pTwo2.text(response1.events[i].venue.address);
 				pTwo3= $("<p>");
-				pTwo3.text("City: " + response1.events[i].venue.city);
+				pTwo3.text(response1.events[i].venue.city);
 				pTwo4 = $("<a>");
 				pTwo4.attr("href", response1.events[i].url);
 				pTwo4.text("Event")
@@ -121,15 +118,15 @@ $("#search").on("click", function (event) {
 	// 	radius: 1000
 	// .addTo(mymap);
 
-	// function onMapClick(e) {
-	// 	circle
-	// 		.setLatLng(e.latlng)
-	// 	circle.bindPopup("You are at " + e.latlng.toString());
-	// 	// .setContent("You clicked the map at " + e.latlng.toString())
-	// 	// .openOn(mymap);
-	// }
+	function onMapClick(e) {
+		circle
+			.setLatLng(e.latlng)
+		circle.bindPopup("You are at " + e.latlng.toString());
+		// .setContent("You clicked the map at " + e.latlng.toString())
+		// .openOn(mymap);
+	}
 
-	// mymap.on('click', onMapClick);
+	mymap.on('click', onMapClick);
 
 
 
