@@ -69,11 +69,21 @@ h1{
 .restName, .eventName{
 font-size:18px;
 }
+
 .field {
     margin-bottom: 20px;
     margin-left: 50px;
 }
+.box-left {
+    float: left;
+    height: 600px;
+}
+.box-right {
+    float: right;
+    height: 600px;
+}
 footer{
+    clear: both;
     text-align: center;
 
     margin-bottom: 0;
@@ -81,25 +91,24 @@ footer{
 }
 .foot {
     text-align: center;
-
 }
 
 p{
-    font-weight: bolder;
-    font-size:12px;
+   margin-bottom: 5px;
 }
 a{
     font-weight: bolder;
     font-size:10px;
-    margin-bottom:10px;
 }
 #mapId {
     height: 400px;
     width: auto;
 }
 .restName {
-    color: rgba(194, 0, 0, 0.53);
-    border-top: rgba(0, 0, 0, 0.603) solid 1px;
+    color: black;
+    border-top: black solid 1px;
+    padding-top: 5px;
+    margin-top: 10px;
 }
 @media only screen and (max-width: 500px) {
     header p {
