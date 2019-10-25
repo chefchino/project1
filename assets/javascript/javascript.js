@@ -73,6 +73,8 @@ $("#search").on("click", function (event) {
 			console.log(response1);
 
 			for (i = 0; i < response1.events.length; i++) {
+				lat1= response1.events[i].venue.location.lat;
+				long1= response1.events[i].venue.location.lon;
 				console.log(response1.events[i].title);
 				pTwo = $("<p>");
 				pTwo.addClass("eventName");
@@ -91,6 +93,13 @@ $("#search").on("click", function (event) {
 				$("#events").append(pTwo2);
 				$("#events").append(pTwo3);
 				$("#events").append(pTwo4);
+				var marker1= L.marker([lat1, long1], {
+					color: 'red',
+					fillColor: '#f03',
+					fillOpacity: 0.5,
+					// radius: 000
+				})
+				marker1.addTo(mymap);
 			};
 		});
 
@@ -110,15 +119,15 @@ $("#search").on("click", function (event) {
 	// 	radius: 1000
 	// .addTo(mymap);
 
-	function onMapClick(e) {
-		circle
-			.setLatLng(e.latlng)
-		circle.bindPopup("You are at " + e.latlng.toString());
-		// .setContent("You clicked the map at " + e.latlng.toString())
-		// .openOn(mymap);
-	}
+	// function onMapClick(e) {
+	// 	circle
+	// 		.setLatLng(e.latlng)
+	// 	circle.bindPopup("You are at " + e.latlng.toString());
+	// 	// .setContent("You clicked the map at " + e.latlng.toString())
+	// 	// .openOn(mymap);
+	// }
 
-	mymap.on('click', onMapClick);
+	// mymap.on('click', onMapClick);
 
 
 
