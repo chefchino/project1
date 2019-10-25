@@ -28,8 +28,14 @@ header img {
 .box-title {
     font-size: 24px;
     color: rgb(194, 0, 0);
+    margin: 0px;
+    
+}
+.glow {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgb(194, 0, 0), 0 0 40px rgb(194, 0, 0), 0 0 50px rgb(194, 0, 0), 0 0 60px rgb(194, 0, 0), 0 0 70px rgb(194, 0, 0);
 
 }
+
 .res-header {
     font-family: 'Fugaz One', cursive;
 
@@ -56,6 +62,10 @@ h1{
     padding: 35px;
 
 }
+.ebox {
+    padding-top: 30.5px;
+
+}
 .my-div-icon{
     background-color: red;
 }
@@ -67,7 +77,9 @@ h1{
     overflow: auto;
 }
 .restName, .eventName{
-font-size:18px;
+    font-size:18px;
+    color: black;
+    border-top: rgba(0, 0, 0, 0.603) solid 1px;
 }
 .field {
     margin-bottom: 20px;
@@ -97,10 +109,7 @@ a{
     height: 400px;
     width: auto;
 }
-.restName {
-    color: rgba(194, 0, 0, 0.53);
-    border-top: rgba(0, 0, 0, 0.603) solid 1px;
-}
+
 @media only screen and (max-width: 500px) {
     header p {
       font-size: 25px;
