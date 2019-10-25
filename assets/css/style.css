@@ -84,7 +84,11 @@ h1{
     overflow: auto;
 }
 .restName, .eventName{
-font-size:18px;
+    font-size:18px;
+    color: black;
+    border-top: black solid 1px;
+    padding-top: 5px;
+    margin-top: 10px;
 }
 .box-left {
     float: left;
@@ -102,10 +106,7 @@ a{
     font-size:10px;
 }
 .restName {
-    color: black;
-    border-top: black solid 1px;
-    padding-top: 5px;
-    margin-top: 10px;
+    
 }
 footer{
     clear: both;
