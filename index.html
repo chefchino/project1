@@ -12,7 +12,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
-    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Monoton|Sigmar+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Monoton|Share|Sigmar+One&display=swap" rel="stylesheet">
+
+
 
 
 </head>
@@ -21,7 +23,7 @@
     <header>
         <div class="flex-container">
             <img src="assets/pizza.png">
-            <p>DAMN, I'M HUNGRY</p>
+            <p class="glow">DAMN, I'M HUNGRY</p>
         </div>
     </header>
 
@@ -40,7 +42,7 @@
 
         <!-- top box where map needs to go  -->
         <div class="box">
-            <p class="title location-div"> WHeRe ArT ThoU?</p>
+            <p class="title location-div"> Location, City 27162</p>
             <div class="content">
                 <div id="mapId"></div>
             </div>
@@ -49,9 +51,9 @@
         <!-- left box where events needs to go  -->
         <div class="tile is-ancestor">
             <div class="tile is-parent is-6 ">
-                <article class="tile is-child box">
+                <article class="tile is-child box ebox">
                     <p class="event-header box-title">EVENTS</p>
-                        <div class="content" id="events">
+                        <div class="subtitle" id="events">
                         <!-- <p></p> -->
                     </div>
                 </article>
@@ -60,10 +62,9 @@
 
             <div class="tile is-parent is-6">
                 <article class="tile is-child box">
-                    <p class="title info-title es-header box-title">Restaurants</p>
+                    <p class="title info-title res-header box-title">Restaurants</p>
                     <div class="subtitle restaurant-name-tag" id="restInfo"></div>
-                    <div class="content info-div">
-                    </div>
+                  
                 </article>
             </div>
         </div>
