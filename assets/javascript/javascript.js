@@ -10,8 +10,14 @@ var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 // 	}
 // });
 
-var starterZip = "27607";
-sessionStorage.setItem("zipcode", starterZip);
+
+	if (sessionStorage.getItem("zipcode") === null){
+		starterZip = "27607";
+	
+		sessionStorage.setItem("zipcode", starterZip);
+	}
+	
+
 
 function search(zipcode) {
 	
