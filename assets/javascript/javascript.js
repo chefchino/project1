@@ -54,7 +54,8 @@ $("#search").on("click", function (event) {
 				$(".restaurant-name-tag").append(pTag4);
 				$(".restaurant-name-tag").append(pTag2);
 				var marker = L.marker([lat, long], {
-				})
+				}).bindPopup('<a href="' + response.restaurants[i].restaurant.url + '">' + response.restaurants[i].restaurant.name + '</a>')
+				.openPopup();
 				marker.addTo(mymap);
 			};
 		});
@@ -89,7 +90,8 @@ $("#search").on("click", function (event) {
 				$("#events").append(pTwo3);
 				$("#events").append(pTwo4);
 				var myIcon = L.divIcon({ className: 'my-div-icon' });
-				L.marker([lat1, long1], { icon: myIcon }).addTo(mymap);
+				L.marker([lat1, long1], { icon: myIcon }).bindPopup('<a href="' + response1.events[i].url + '">' + response1.events[i].title + '</a>')
+				.openPopup().addTo(mymap);
 			};
 		});
 
