@@ -1,5 +1,5 @@
 var mymap = L.map('mapId')
-mymap.setView([35.900019, -79.012629], 13);
+// mymap.setView([35.900019, -79.012629], 13);
 
 var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 
@@ -13,12 +13,13 @@ $("#search").on("click", function (event) {
 	event.preventDefault();
 	console.log("inside");
 	var zipcode = $("#zipcode").val();
-
+	
 	$("#zipcode").val("");
 	$(".location-div").val("");
 	$(".location-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();
+	$(".leaflet-marker-pane").empty();
 
 	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 
