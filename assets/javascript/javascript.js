@@ -11,8 +11,6 @@ var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 // });
 function search (zipcode) {
 
-
-	
 	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 
 	seatGeekURL = "https://api.seatgeek.com/2/events?client_id=MTkwMzg0NDh8MTU3MTc4NTIxNS4zOQ&postal_code=" + zipcode;
@@ -48,10 +46,10 @@ function search (zipcode) {
 				$(".restaurant-name-tag").append(pTag3);
 				$(".restaurant-name-tag").append(pTag4);
 				$(".restaurant-name-tag").append(pTag2);
-				var marker = L.divIcon({className: 'my-other-div'});
-				L.marker([lat, long], { icon: marker
+				var marker = L.marker([lat, long], {
 				}).bindPopup('<a href="' + response.restaurants[i].restaurant.url + '">' + response.restaurants[i].restaurant.name + '</a>')
-				.openPopup().addTo(mymap);
+				.openPopup();
+				marker.addTo(mymap);
 			};
 		});
 
@@ -108,8 +106,7 @@ $(document).on("click", "#search", function(event) {
 	console.log("inside");
 	var zipcode = $("#zipcode").val();
 	search(zipcode);
-
-
+	
 	$("#zipcode").val("");
 	$(".location-div").val("");
 	$(".location-div").text(zipcode);
