@@ -17,6 +17,8 @@ $("#search").on("click", function (event) {
 	$("#zipcode").val("");
 	$(".location-div").val("");
 	$(".location-div").text(zipcode);
+	$("#events").empty();
+	$("#restInfo").empty();
 
 	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 
