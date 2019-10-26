@@ -3,23 +3,16 @@ mymap.setView([35.900019, -79.012629], 13);
 
 var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 
-$("#zipcode").keyup(function (event) {
+// $("#zipcode").keyup(function (event) {
 
-	if (event.keyCode === 13) {
-		$("#search").click();
-	}
-});
-$("#search").on("click", function (event) {
-	event.preventDefault();
-	console.log("inside");
-	var zipcode = $("#zipcode").val();
+// 	if (event.keyCode === 13) {
+// 		$("#search").click();
+// 	}
+// });
+function search (zipcode) {
 
-	$("#zipcode").val("");
-	$(".location-div").val("");
-	$(".location-div").text(zipcode);
-	$("#events").empty();
-	$("#restInfo").empty();
 
+	
 	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 
 	seatGeekURL = "https://api.seatgeek.com/2/events?client_id=MTkwMzg0NDh8MTU3MTc4NTIxNS4zOQ&postal_code=" + zipcode;
@@ -104,4 +97,47 @@ $("#search").on("click", function (event) {
 		accessToken: 'pk.eyJ1IjoiY2hlZmNoaW5vIiwiYSI6ImNrMXhxdG05dDBjNXczbW8zcDVsZXAza3gifQ.n7yrjPAM_yOPpOJGez6qKQ'
 	}).addTo(mymap);
 
-})
+	sessionStorage.clear();
+	sessionStorage.setItem("zipcode", zipcode);
+
+};
+
+
+$(document).on("click", "#search", function(event) {
+	event.preventDefault();
+	console.log("inside");
+	var zipcode = $("#zipcode").val();
+	search(zipcode);
+
+
+	$("#zipcode").val("");
+	$(".location-div").val("");
+	$(".location-div").text(zipcode);
+	$("#events").empty();
+	$("#restInfo").empty();
+   });
+
+$(document).keypress(function(event) {
+if (event.keyCode == 13) {   
+	event.preventDefault();
+	console.log("inside");
+	var zipcode = $("#zipcode").val();
+	search(zipcode); 
+
+
+	$("#zipcode").val("");
+	$(".location-div").val("");
+	$(".location-div").text(zipcode);
+	$("#events").empty();
+	$("#restInfo").empty();  
+}
+});
+
+$(document).ready(function() {
+	var sZip = sessionStorage.getItem("zipcode");
+	$("#zipcode").val(sZip);
+	search(sZip);
+	
+});
+
+
