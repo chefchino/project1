@@ -55,10 +55,10 @@ $("#search").on("click", function (event) {
 				$(".restaurant-name-tag").append(pTag3);
 				$(".restaurant-name-tag").append(pTag4);
 				$(".restaurant-name-tag").append(pTag2);
-				var marker = L.marker([lat, long], {
+				var marker = L.divIcon({className: 'my-other-div'});
+				L.marker([lat, long], { icon: marker
 				}).bindPopup('<a href="' + response.restaurants[i].restaurant.url + '">' + response.restaurants[i].restaurant.name + '</a>')
-				.openPopup();
-				marker.addTo(mymap);
+				.openPopup().addTo(mymap);
 			};
 		});
 
