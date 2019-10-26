@@ -15,9 +15,12 @@ $("#search").on("click", function (event) {
 	console.log("inside");
 	var zipcode = $("#zipcode").val();
 	// zomato ajax
+	
 	$("#zipcode").val("");
 	$(".location-div").val("");
 	$(".location-div").text(zipcode);
+	$("#events").empty();
+	$("#restInfo").empty();
 
 	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 	// resturants[0].resturant.R.name
