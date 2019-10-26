@@ -1,5 +1,5 @@
 var mymap = L.map('mapId')
-mymap.setView([35.900019, -79.012629], 13);
+// mymap.setView([35.900019, -79.012629], 13);
 
 var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 
@@ -9,7 +9,8 @@ var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 // 		$("#search").click();
 // 	}
 // });
-function search (zipcode) {
+function search(zipcode) {
+	
 
 	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 
@@ -46,10 +47,10 @@ function search (zipcode) {
 				$(".restaurant-name-tag").append(pTag3);
 				$(".restaurant-name-tag").append(pTag4);
 				$(".restaurant-name-tag").append(pTag2);
-				var marker = L.marker([lat, long], {
-				}).bindPopup('<a href="' + response.restaurants[i].restaurant.url + '">' + response.restaurants[i].restaurant.name + '</a>')
-				.openPopup();
-				marker.addTo(mymap);
+				var marker = L.divIcon({className: 'my-other-div'});
+                L.marker([lat, long], { icon: marker
+                }).bindPopup('<a href="' + response.restaurants[i].restaurant.url + '">' + response.restaurants[i].restaurant.name + '</a>')
+                .openPopup().addTo(mymap);
 			};
 		});
 
@@ -112,6 +113,8 @@ $(document).on("click", "#search", function(event) {
 	$(".location-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();
+	$(".leaflet-marker-pane").empty();
+
    });
 
 $(document).keypress(function(event) {
@@ -127,6 +130,8 @@ if (event.keyCode == 13) {
 	$(".location-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();  
+	$(".leaflet-marker-pane").empty();
+
 }
 });
 
