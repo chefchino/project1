@@ -3,23 +3,24 @@ var mymap = L.map('mapId')
 
 var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 
-$("#zipcode").keyup(function (event) {
+// $("#zipcode").keyup(function (event) {
 
-	if (event.keyCode === 13) {
-		$("#search").click();
-	}
-});
-$("#search").on("click", function (event) {
-	event.preventDefault();
-	console.log("inside");
-	var zipcode = $("#zipcode").val();
+// 	if (event.keyCode === 13) {
+// 		$("#search").click();
+// 	}
+// });
+
+
+	if (sessionStorage.getItem("zipcode") === null){
+		starterZip = "27607";
 	
-	$("#zipcode").val("");
-	$(".location-div").val("");
-	$(".location-div").text(zipcode);
-	$("#events").empty();
-	$("#restInfo").empty();
-	$(".leaflet-marker-pane").empty();
+		sessionStorage.setItem("zipcode", starterZip);
+	}
+	
+
+
+function search(zipcode) {
+	
 
 	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
 
@@ -57,9 +58,9 @@ $("#search").on("click", function (event) {
 				$(".restaurant-name-tag").append(pTag4);
 				$(".restaurant-name-tag").append(pTag2);
 				var marker = L.divIcon({className: 'my-other-div'});
-				L.marker([lat, long], { icon: marker
-				}).bindPopup('<a href="' + response.restaurants[i].restaurant.url + '">' + response.restaurants[i].restaurant.name + '</a>')
-				.openPopup().addTo(mymap);
+                L.marker([lat, long], { icon: marker
+                }).bindPopup('<a href="' + response.restaurants[i].restaurant.url + '">' + response.restaurants[i].restaurant.name + '</a>')
+                .openPopup().addTo(mymap);
 			};
 		});
 
@@ -105,4 +106,50 @@ $("#search").on("click", function (event) {
 		accessToken: 'pk.eyJ1IjoiY2hlZmNoaW5vIiwiYSI6ImNrMXhxdG05dDBjNXczbW8zcDVsZXAza3gifQ.n7yrjPAM_yOPpOJGez6qKQ'
 	}).addTo(mymap);
 
-})
+	sessionStorage.clear();
+	sessionStorage.setItem("zipcode", zipcode);
+
+};
+
+
+$(document).on("click", "#search", function(event) {
+	event.preventDefault();
+	console.log("inside");
+	var zipcode = $("#zipcode").val();
+	search(zipcode);
+	
+	$("#zipcode").val("");
+	$(".location-div").val("");
+	$(".location-div").text(zipcode);
+	$("#events").empty();
+	$("#restInfo").empty();
+	$(".leaflet-marker-pane").empty();
+
+   });
+
+$(document).keypress(function(event) {
+if (event.keyCode == 13) {   
+	event.preventDefault();
+	console.log("inside");
+	var zipcode = $("#zipcode").val();
+	search(zipcode); 
+
+
+	$("#zipcode").val("");
+	$(".location-div").val("");
+	$(".location-div").text(zipcode);
+	$("#events").empty();
+	$("#restInfo").empty();  
+	$(".leaflet-marker-pane").empty();
+
+}
+});
+
+$(document).ready(function() {
+	var sZip = sessionStorage.getItem("zipcode");
+	$("#zipcode").val(sZip);
+	search(sZip);
+	
+});
+
+
