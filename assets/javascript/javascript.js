@@ -76,12 +76,12 @@ function search(zipcode) {
 									pTag.addClass("restName");
 									pTag.text(response.restaurants[i].name);
 									pTag1 = $("<p>");
-									pTag1.text("Address: " + response.restaurants[i].streetAddress);
+									pTag1.text("Address: " + response.restaurants[i].streetAddress + ", " + response.restaurants[i].city);
 									pTag2 = $("<a>");
 									pTag2.attr("href", response.restaurants[i].url);
 									pTag2.text("Check It Out");
 									pTag3 = $("<p>");
-									pTag3.text("minWaitTime: " + response.restaurants[i].minWaitTime);
+									pTag3.text("Minimum Wait Time: " + response.restaurants[i].minWaitTime);
 									pTag4 = $("<p>");
 									pTag4.text("Delivery: " + response.restaurants[i].offersDelivery);
 									$(".restaurant-name-tag").append(pTag);
