@@ -100,7 +100,7 @@ function search(zipcode) {
 									}).bindPopup('<a href="' + response.restaurants[i].url + '">' + response.restaurants[i].name + '</a>')
 									.openPopup().addTo(mymap);
 								
-					});
+					}});
 		});
 
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
