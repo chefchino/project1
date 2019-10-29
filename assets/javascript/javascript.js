@@ -25,8 +25,8 @@ function search(zipcode) {
 	})
 	.done((response1) => {
 		console.log(response1);
-		mymap.setView([response1.events[2].venue.location.lat,
-			response1.events[2].venue.location.lon], 13);
+		mymap.setView([response1.events[4].venue.location.lat,
+			response1.events[4].venue.location.lon], 11);
 						for (i = 0; i < response1.events.length; i++) {
 							var lat1 = response1.events[i].venue.location.lat;
 							 lat2 = response1.events[0].venue.location.lat;
