@@ -1,6 +1,7 @@
 html { 
     background-color: black;
     color: #8E8D8a;
+    margin: 10px;
 }
 header {
     position: relative;
