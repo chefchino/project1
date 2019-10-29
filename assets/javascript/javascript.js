@@ -94,17 +94,12 @@ function search(zipcode) {
 									var marker = L.divIcon({
 										className: 'my-other-div',
 										iconUrl: '../marker2b.png',
-										iconSize: [20, 32],
-										// iconAnchor: [22, 94],
-										// popupAnchor: [-3, -76],
-										// shadowUrl: 'my-icon-shadow.png',
-										// shadowSize: [68, 95],
-										// shadowAnchor: [22, 94]
-								});
+										iconSize: [20, 32],});
+
 									L.marker([lat, long], { icon: marker
 									}).bindPopup('<a href="' + response.restaurants[i].url + '">' + response.restaurants[i].name + '</a>')
 									.openPopup().addTo(mymap);
-								};
+								
 					});
 		});
 

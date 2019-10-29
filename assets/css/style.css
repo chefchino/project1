@@ -4,12 +4,10 @@ html {
 }
 header {
     position: relative;
-    /* border-bottom: #6e6658 solid 1px; */
+
     margin-bottom: 10px;
-    /* text-align: center; */
     padding: 20px;
     min-height: 70px;
-    /* background-color: rgba(110, 102, 88, 0.568);  */
 }
 header p {
     color: rgb(194, 0, 0);
