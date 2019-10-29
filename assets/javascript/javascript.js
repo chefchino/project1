@@ -1,14 +1,9 @@
 var mymap = L.map('mapId')
-// mymap.setView([35.900019, -79.012629], 13);
 
-var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
+var lat2;
+var long2;
 
-// $("#zipcode").keyup(function (event) {
-
-// 	if (event.keyCode === 13) {
-// 		$("#search").click();
-// 	}
-// });
+var eatStreetAPI = "&access-token=aba37ae090f087f7";
 
 
 	if (sessionStorage.getItem("zipcode") === null){
@@ -21,82 +16,85 @@ var zomatoAPIKey = "&apikey=a07626ef54fa05775a802f84080be9bf";
 
 function search(zipcode) {
 	
-
-	zomatoURL = "https://developers.zomato.com/api/v2.1/search?q=" + zipcode + zomatoAPIKey;
-
+	
 	seatGeekURL = "https://api.seatgeek.com/2/events?client_id=MTkwMzg0NDh8MTU3MTc4NTIxNS4zOQ&postal_code=" + zipcode;
-
-
-	$.ajax({
-		url: zomatoURL,
-		method: 'GET',
-	})
-		.done((response) => {
-			console.log(response);
-
-			
-
-			for (i = 0; i < response.restaurants.length; i++) {
-				console.log(response.restaurants[i].restaurant.name);
-				long = response.restaurants[i].restaurant.location.longitude;
-				lat = response.restaurants[i].restaurant.location.latitude;
-				pTag = $("<p></p>");
-				pTag.addClass("restName");
-				pTag.text(response.restaurants[i].restaurant.name);
-				pTag1 = $("<p>");
-				pTag1.text("Address: " + response.restaurants[i].restaurant.location.address);
-				pTag2 = $("<a>");
-				pTag2.attr("href", response.restaurants[i].restaurant.url);
-				pTag2.text("Check It Out");
-				pTag3 = $("<p>");
-				pTag3.text("Rating: " + response.restaurants[i].restaurant.user_rating.aggregate_rating);
-				pTag4 = $("<p>");
-				pTag4.text("Avg for two: $" + response.restaurants[i].restaurant.average_cost_for_two);
-				$(".restaurant-name-tag").append(pTag);
-				$(".restaurant-name-tag").append(pTag1);
-				$(".restaurant-name-tag").append(pTag3);
-				$(".restaurant-name-tag").append(pTag4);
-				$(".restaurant-name-tag").append(pTag2);
-				var marker = L.divIcon({className: 'my-other-div'});
-                L.marker([lat, long], { icon: marker
-                }).bindPopup('<a href="' + response.restaurants[i].restaurant.url + '">' + response.restaurants[i].restaurant.name + '</a>')
-                .openPopup().addTo(mymap);
-			};
-		});
-
+	
 	$.ajax({
 		url: seatGeekURL,
 		method: 'GET',
 	})
-		.done((response1) => {
-			console.log(response1);
-			mymap.setView([response1.events[0].venue.location.lat,
-				response1.events[0].venue.location.lon], 13);
-			for (i = 0; i < response1.events.length; i++) {
-				lat1 = response1.events[i].venue.location.lat;
-				long1 = response1.events[i].venue.location.lon;
-				console.log(response1.events[i].title);
-				pTwo = $("<p>");
-				pTwo.addClass("eventName");
-				pTwo.text(response1.events[i].title);
-				pTwo1 = $("<p>");
-				pTwo1.text("Event Type: " + response1.events[i].type)
-				pTwo2 = $("<p>");
-				pTwo2.text("Address: " + response1.events[i].venue.address);
-				pTwo3 = $("<p>");
-				pTwo3.text("City: " + response1.events[i].venue.city);
-				pTwo4 = $("<a>");
-				pTwo4.attr("href", response1.events[i].url);
-				pTwo4.text("Get Tickets")
-				$("#events").append(pTwo);
-				$("#events").append(pTwo1);
-				$("#events").append(pTwo2);
-				$("#events").append(pTwo3);
-				$("#events").append(pTwo4);
-				var myIcon = L.divIcon({ className: 'my-div-icon' });
-				L.marker([lat1, long1], { icon: myIcon }).bindPopup('<a href="' + response1.events[i].url + '">' + response1.events[i].title + '</a>')
-				.openPopup().addTo(mymap);
-			};
+	.done((response1) => {
+		console.log(response1);
+		mymap.setView([response1.events[4].venue.location.lat,
+			response1.events[4].venue.location.lon], 11);
+						for (i = 0; i < response1.events.length; i++) {
+							var lat1 = response1.events[i].venue.location.lat;
+							 lat2 = response1.events[0].venue.location.lat;
+							 var long1 = response1.events[i].venue.location.lon;
+							 long2 = response1.events[0].venue.location.lon;
+							 
+							console.log(response1.events[i].title);
+							pTwo = $("<p>");
+							pTwo.addClass("eventName");
+							pTwo.text(response1.events[i].title);
+							pTwo1 = $("<p>");
+							pTwo1.text("Event Type: " + response1.events[i].type)
+							pTwo2 = $("<p>");
+							pTwo2.text("Address: " + response1.events[i].venue.address);
+							pTwo3 = $("<p>");
+							pTwo3.text("City: " + response1.events[i].venue.city);
+							pTwo4 = $("<a>");
+							pTwo4.attr("href", response1.events[i].url);
+							pTwo4.text("Get Tickets")
+							$("#events").append(pTwo);
+							$("#events").append(pTwo1);
+							$("#events").append(pTwo2);
+							$("#events").append(pTwo3);
+							$("#events").append(pTwo4);
+							var myIcon = L.divIcon({ className: 'my-div-icon' });
+							L.marker([lat1, long1], { icon: myIcon }).bindPopup('<a href="' + response1.events[i].url + '">' + response1.events[i].title + '</a>')
+							.openPopup().addTo(mymap);
+						};
+						EatStreetURL = "https://eatstreet.com/publicapi/v1/restaurant/search?latitude=" + lat2 + "&longitude=" + long2 + eatStreetAPI;
+					
+					
+					
+						$.ajax({
+							url: EatStreetURL,
+							method: 'GET',
+						})
+							.done((response) => {
+								console.log(response);
+					
+								
+					
+								for (i = 0; i < response.restaurants.length; i++) {
+								
+									long = response.restaurants[i].longitude;
+									lat = response.restaurants[i].latitude;
+									pTag = $("<p></p>");
+									pTag.addClass("restName");
+									pTag.text(response.restaurants[i].name);
+									pTag1 = $("<p>");
+									pTag1.text("Address: " + response.restaurants[i].streetAddress + ", " + response.restaurants[i].city);
+									pTag2 = $("<a>");
+									pTag2.attr("href", response.restaurants[i].url);
+									pTag2.text("Check It Out");
+									pTag3 = $("<p>");
+									pTag3.text("Minimum Wait Time: " + response.restaurants[i].minWaitTime);
+									pTag4 = $("<p>");
+									pTag4.text("Delivery: " + response.restaurants[i].offersDelivery);
+									$(".restaurant-name-tag").append(pTag);
+									$(".restaurant-name-tag").append(pTag1);
+									$(".restaurant-name-tag").append(pTag3);
+									$(".restaurant-name-tag").append(pTag4);
+									$(".restaurant-name-tag").append(pTag2);
+									var marker = L.divIcon({className: 'my-other-div'});
+									L.marker([lat, long], { icon: marker
+									}).bindPopup('<a href="' + response.restaurants[i].url + '">' + response.restaurants[i].name + '</a>')
+									.openPopup().addTo(mymap);
+								};
+					});
 		});
 
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -119,8 +117,8 @@ $(document).on("click", "#search", function(event) {
 	search(zipcode);
 	
 	$("#zipcode").val("");
-	$(".zip-div").val("");
-	$(".zip-div").text(zipcode);
+	$(".location-div").val("");
+	$(".location-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();
 	$(".leaflet-marker-pane").empty();
@@ -136,8 +134,8 @@ if (event.keyCode == 13) {
 
 
 	$("#zipcode").val("");
-	$(".zip-div").val("");
-	$(".zip-div").text(zipcode);
+	$(".location-div").val("");
+	$(".location-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();  
 	$(".leaflet-marker-pane").empty();
@@ -151,5 +149,3 @@ $(document).ready(function() {
 	search(sZip);
 	
 });
-
-
