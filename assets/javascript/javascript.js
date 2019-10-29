@@ -119,8 +119,8 @@ $(document).on("click", "#search", function(event) {
 	search(zipcode);
 	
 	$("#zipcode").val("");
-	$(".location-div").val("");
-	$(".location-div").text(zipcode);
+	$(".zip-div").val("");
+	$(".zip-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();
 	$(".leaflet-marker-pane").empty();
@@ -136,8 +136,8 @@ if (event.keyCode == 13) {
 
 
 	$("#zipcode").val("");
-	$(".location-div").val("");
-	$(".location-div").text(zipcode);
+	$(".zip-div").val("");
+	$(".zip-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();  
 	$(".leaflet-marker-pane").empty();
