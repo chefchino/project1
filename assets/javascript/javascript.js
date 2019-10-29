@@ -1,21 +1,15 @@
 var mymap = L.map('mapId')
-
 var lat2;
 var long2;
-
 var eatStreetAPI = "&access-token=aba37ae090f087f7";
 
+if (sessionStorage.getItem("zipcode") === null){
+	starterZip = "27607";
 
-	if (sessionStorage.getItem("zipcode") === null){
-		starterZip = "27607";
-	
-		sessionStorage.setItem("zipcode", starterZip);
-	}
-	
-
+	sessionStorage.setItem("zipcode", starterZip);
+}
 
 function search(zipcode) {
-	
 	
 	seatGeekURL = "https://api.seatgeek.com/2/events?client_id=MTkwMzg0NDh8MTU3MTc4NTIxNS4zOQ&postal_code=" + zipcode;
 	
@@ -66,8 +60,6 @@ function search(zipcode) {
 							.done((response) => {
 								console.log(response);
 					
-								
-					
 								for (i = 0; i < response.restaurants.length; i++) {
 								
 									long = response.restaurants[i].longitude;
@@ -106,9 +98,7 @@ function search(zipcode) {
 
 	sessionStorage.clear();
 	sessionStorage.setItem("zipcode", zipcode);
-
 };
-
 
 $(document).on("click", "#search", function(event) {
 	event.preventDefault();
@@ -122,7 +112,6 @@ $(document).on("click", "#search", function(event) {
 	$("#events").empty();
 	$("#restInfo").empty();
 	$(".leaflet-marker-pane").empty();
-
    });
 
 $(document).keypress(function(event) {
@@ -132,15 +121,13 @@ if (event.keyCode == 13) {
 	var zipcode = $("#zipcode").val();
 	search(zipcode); 
 
-
 	$("#zipcode").val("");
 	$(".location-div").val("");
 	$(".location-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();  
 	$(".leaflet-marker-pane").empty();
-
-}
+	}
 });
 
 $(document).ready(function() {
