@@ -8,7 +8,6 @@ if (sessionStorage.getItem("zipcode") === null){
 
 	sessionStorage.setItem("zipcode", starterZip);
 }
-
 function search(zipcode) {
 	
 	seatGeekURL = "https://api.seatgeek.com/2/events?client_id=MTkwMzg0NDh8MTU3MTc4NTIxNS4zOQ&postal_code=" + zipcode;
