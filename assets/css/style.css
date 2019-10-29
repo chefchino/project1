@@ -48,12 +48,12 @@ h1{
     margin-left: 30px;
 }
 .my-div-icon{
-    background-color: red;
-    border-radius: 50%;
+    background-image: url("../marker1b.png");
+    border-radius: 35%;
 }
 .my-other-div{
-    background-color: blue;
-    border-radius: 50%;
+    background-image: url("../marker2b.png");
+    border-radius: 35%;
 }
 .box {
     color: #112d32;
@@ -73,9 +73,7 @@ h1{
     padding-top: 30.5px;
 
 }
-.my-div-icon{
-    background-color: red;
-}
+
 .is-child-box {
     border-radius: 4px;
 }
