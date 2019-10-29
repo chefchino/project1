@@ -1,7 +1,11 @@
 var mymap = L.map('mapId')
+
 var lat2;
 var long2;
+
 var eatStreetAPI = "&access-token=aba37ae090f087f7";
+
+	
 
 if (sessionStorage.getItem("zipcode") === null){
 	starterZip = "27607";
@@ -9,6 +13,7 @@ if (sessionStorage.getItem("zipcode") === null){
 	sessionStorage.setItem("zipcode", starterZip);
 }
 function search(zipcode) {
+	
 	
 	seatGeekURL = "https://api.seatgeek.com/2/events?client_id=MTkwMzg0NDh8MTU3MTc4NTIxNS4zOQ&postal_code=" + zipcode;
 	
@@ -44,7 +49,9 @@ function search(zipcode) {
 							$("#events").append(pTwo2);
 							$("#events").append(pTwo3);
 							$("#events").append(pTwo4);
-							var myIcon = L.divIcon({ className: 'my-div-icon' });
+							var myIcon = L.divIcon({ className: 'my-div-icon',
+							iconUrl: '../marker1b.png',
+							iconSize: [20, 32], });
 							L.marker([lat1, long1], { icon: myIcon }).bindPopup('<a href="' + response1.events[i].url + '">' + response1.events[i].title + '</a>')
 							.openPopup().addTo(mymap);
 						};
@@ -58,6 +65,8 @@ function search(zipcode) {
 						})
 							.done((response) => {
 								console.log(response);
+					
+								
 					
 								for (i = 0; i < response.restaurants.length; i++) {
 								
@@ -80,7 +89,16 @@ function search(zipcode) {
 									$(".restaurant-name-tag").append(pTag3);
 									$(".restaurant-name-tag").append(pTag4);
 									$(".restaurant-name-tag").append(pTag2);
-									var marker = L.divIcon({className: 'my-other-div'});
+									var marker = L.divIcon({
+										className: 'my-other-div',
+										iconUrl: '../marker2b.png',
+										iconSize: [20, 32],
+										// iconAnchor: [22, 94],
+										// popupAnchor: [-3, -76],
+										// shadowUrl: 'my-icon-shadow.png',
+										// shadowSize: [68, 95],
+										// shadowAnchor: [22, 94]
+								});
 									L.marker([lat, long], { icon: marker
 									}).bindPopup('<a href="' + response.restaurants[i].url + '">' + response.restaurants[i].name + '</a>')
 									.openPopup().addTo(mymap);

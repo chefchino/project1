@@ -2,17 +2,14 @@
 html { 
     background-color: black;
     color: #8E8D8a;
-    /* margin: 10px; */
+    margin: 10px;
     margin-bottom: 40px;
 }
 header {
     position: relative;
-    /* border-bottom: #6e6658 solid 1px; */
     margin-bottom: 10px;
-    /* text-align: center; */
     padding: 20px;
     min-height: 70px;
-    /* background-color: rgba(110, 102, 88, 0.568);  */
 }
 header p {
     color: rgb(194, 0, 0);
@@ -51,12 +48,12 @@ h1{
     margin-left: 30px;
 }
 .my-div-icon{
-    background-color: red;
-    border-radius: 50%;
+    background-image: url("../marker1b.png");
+    border-radius: 35%;
 }
 .my-other-div{
-    background-color: blue;
-    border-radius: 50%;
+    background-image: url("../marker2b.png");
+    border-radius: 35%;
 }
 .box {
     color: #112d32;
@@ -76,9 +73,7 @@ h1{
     padding-top: 30.5px;
 
 }
-.my-div-icon{
-    background-color: red;
-}
+
 .is-child-box {
     border-radius: 4px;
 }
