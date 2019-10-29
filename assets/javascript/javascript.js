@@ -5,15 +5,13 @@ var long2;
 
 var eatStreetAPI = "&access-token=aba37ae090f087f7";
 
-
-	if (sessionStorage.getItem("zipcode") === null){
-		starterZip = "27607";
-	
-		sessionStorage.setItem("zipcode", starterZip);
-	}
 	
 
+if (sessionStorage.getItem("zipcode") === null){
+	starterZip = "27607";
 
+	sessionStorage.setItem("zipcode", starterZip);
+}
 function search(zipcode) {
 	
 	
@@ -112,9 +110,7 @@ function search(zipcode) {
 
 	sessionStorage.clear();
 	sessionStorage.setItem("zipcode", zipcode);
-
 };
-
 
 $(document).on("click", "#search", function(event) {
 	event.preventDefault();
@@ -128,7 +124,6 @@ $(document).on("click", "#search", function(event) {
 	$("#events").empty();
 	$("#restInfo").empty();
 	$(".leaflet-marker-pane").empty();
-
    });
 
 $(document).keypress(function(event) {
@@ -138,15 +133,13 @@ if (event.keyCode == 13) {
 	var zipcode = $("#zipcode").val();
 	search(zipcode); 
 
-
 	$("#zipcode").val("");
 	$(".location-div").val("");
 	$(".location-div").text(zipcode);
 	$("#events").empty();
 	$("#restInfo").empty();  
 	$(".leaflet-marker-pane").empty();
-
-}
+	}
 });
 
 $(document).ready(function() {
@@ -155,5 +148,3 @@ $(document).ready(function() {
 	search(sZip);
 	
 });
-
-
