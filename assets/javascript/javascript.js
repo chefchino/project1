@@ -51,7 +51,9 @@ function search(zipcode) {
 							$("#events").append(pTwo2);
 							$("#events").append(pTwo3);
 							$("#events").append(pTwo4);
-							var myIcon = L.divIcon({ className: 'my-div-icon' });
+							var myIcon = L.divIcon({ className: 'my-div-icon',
+							iconUrl: '../marker1b.png',
+							iconSize: [20, 32], });
 							L.marker([lat1, long1], { icon: myIcon }).bindPopup('<a href="' + response1.events[i].url + '">' + response1.events[i].title + '</a>')
 							.openPopup().addTo(mymap);
 						};
@@ -89,11 +91,15 @@ function search(zipcode) {
 									$(".restaurant-name-tag").append(pTag3);
 									$(".restaurant-name-tag").append(pTag4);
 									$(".restaurant-name-tag").append(pTag2);
-									var marker = L.divIcon({className: 'my-other-div'});
+									var marker = L.divIcon({
+										className: 'my-other-div',
+										iconUrl: '../marker2b.png',
+										iconSize: [20, 32],});
+
 									L.marker([lat, long], { icon: marker
 									}).bindPopup('<a href="' + response.restaurants[i].url + '">' + response.restaurants[i].name + '</a>')
 									.openPopup().addTo(mymap);
-								};
+								
 					});
 		});
 
